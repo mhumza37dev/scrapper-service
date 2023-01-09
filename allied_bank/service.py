@@ -25,7 +25,8 @@ sleep(20)
 
 
 # all_cities = driver.execute_script(""" var arr1 = Array.from(document.getElementsByClassName('Styled__CityTitleHolder-m8ru5e-10')).map((el)=>{return el?.innerText}); return arr1""")
-all_cities = driver.execute_script(""" var arr1 = Array.from(document.getElementsByClassName('Styled__CityTitleHolder-m8ru5e-10')).map((el)=>{return el?.innerText}); return arr1""")
+all_cities = ['karachi', 'islamabad', 'rawalpindi', 'lahore', 'sialkot', 'faisalabad', 'quetta', 'peshawar', 'hyderabad', 'multan', 'gujranwala']
+# all_cities = driver.execute_script(""" var arr1 = Array.from(document.getElementsByClassName('Styled__CityTitleHolder-m8ru5e-10')).map((el)=>{return el?.innerText}); return arr1""")
 # data = driver.execute_script(""" var arr1 = Array.from(document.getElementsByClassName('Styled__CityTitleHolder-m8ru5e-10')).map((el) => {
 #     return el?.innerText
 # });
@@ -83,7 +84,7 @@ for city in all_cities:
         return discount
         """)
         sleep(5)
-        with open('./allied_bank/allied_bank_discounts_'+modified_city_name+'.csv','w') as file:
+        with open('./allied_bank/main_cities/allied_bank_discounts_'+modified_city_name+'.csv','w') as file:
 
             df = pd.DataFrame(discount).to_csv(file)
         sleep(5)
@@ -107,7 +108,7 @@ for city in all_cities:
         """)
 
         sleep(5)
-        with open('./allied_bank/allied_bank_discounts_'+mCity+'.csv','w') as file:
+        with open('./allied_bank/main_cities/allied_bank_discounts_'+mCity+'.csv','w') as file:
 
             df = pd.DataFrame(discount).to_csv(file)
         sleep(5)
